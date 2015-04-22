@@ -17,6 +17,7 @@ The following software is required to carry out development, no insturctions are
 - [pip](https://pypi.python.org/pypi/pip)
 - [virtualenv](http://virtualenv.readthedocs.org/en/latest/) (can be installed via `pip install virtualenv`)
 - [PostgreSQL Database (9.3)](http://www.postgresql.org/download/) (it is not recommended that you use sqlite)
+- psycopg2 (can be installed via `pip install psycopg2`)
 - [node.js](http://nodejs.org/download/) & npm
 - [bower](h ttp://bower.io/#install-bower) (can be installed via `npm install bower`)
 
@@ -44,11 +45,15 @@ Development
 -----------
 
 1. Ensure that your virtualenv is activated
-2. Navigate to the directory containing this cloned repository and run `pip install -r requirements/local.py` to install the python dependencies.
-3. Install the web dependancies using bower with `bower install`
-3. Create a database using postgres (the easiest method is via the pgadmin tool).
-4. Verify that the settings in medchecker/medchecker/settings/local.py are correct.
-4. Change directory to medchecker.
-5. Setup the database using the django tools `./manage.py migrate`.
-6. Run the server with `./manage.py runserver`
-7. Point your browser to `http://localhost:8000`
+1. Navigate to the directory containing this cloned repository and run `pip install -r requirements/local.py` to install the python dependencies.
+1. Install the web dependancies using bower with `bower install`
+1. Create a database using postgres (the easiest method is via the pgadmin tool).
+1. Verify that the settings in medchecker/medchecker/settings/local.py are correct.
+1. Change directory to medchecker.
+1. Check that manage.py is executable, if not change it using `chmod +x manage.py`
+1. Setup the database using the django tools `./manage.py migrate`.
+1. Create a superuser by running `./manage.py createsuperuser`.
+1. Run the server with `./manage.py runserver`
+1. Point your browser to `http://localhost:8000`
+
+To login using the user created in the steps above, navigate to `http://localhost:8000/unlock/[nfc_login_id]`, the nfc_login_id can be taken from the core_nfcuser table. The default PIN in 1111.
