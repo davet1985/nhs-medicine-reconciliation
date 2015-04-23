@@ -50,26 +50,6 @@ EMAIL_USE_TLS = True
 SERVER_EMAIL = EMAIL_HOST_USER
 ########## END EMAIL CONFIGURATION
 
-########## TOOLBAR CONFIGURATION
-# See: http://django-debug-toolbar.readthedocs.org/en/latest/installation.html#explicit-setup
-INSTALLED_APPS += (
-    'debug_toolbar',
-)
-
-MIDDLEWARE_CLASSES += (
-    'debug_toolbar.middleware.DebugToolbarMiddleware',
-)
-
-DEBUG_TOOLBAR_PATCH_SETTINGS = False
-
-DEBUG_TOOLBAR_CONFIG = {
-    'JQUERY_URL': '/static/js/jquery.min.js',
-}
-
-# http://django-debug-toolbar.readthedocs.org/en/latest/installation.html
-INTERNAL_IPS = ('127.0.0.1',)
-########## END TOOLBAR CONFIGURATION
-
 ########## DATABASE CONFIGURATION
 DATABASES = {}
 ########## END DATABASE CONFIGURATION
