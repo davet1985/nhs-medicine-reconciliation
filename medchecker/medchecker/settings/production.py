@@ -21,7 +21,7 @@ def get_env_setting(setting):
 
 ########## HOST CONFIGURATION
 # See: https://docs.djangoproject.com/en/1.5/releases/1.5/#allowed-hosts-required-in-production
-ALLOWED_HOSTS = ['themedchecker.herokuapp.com']
+ALLOWED_HOSTS = ['localhost', 'themedchecker.herokuapp.com']
 ########## END HOST CONFIGURATION
 
 ########## EMAIL CONFIGURATION
@@ -64,6 +64,9 @@ CACHES = {
 }
 ########## END CACHE CONFIGURATION
 
+INSTALLED_APPS += (
+    'debug_toolbar',
+)
 
 ########## SECRET CONFIGURATION
 # See: https://docs.djangoproject.com/en/dev/ref/settings/#secret-key
